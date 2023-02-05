@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>Spørsmål 1</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="module" src="script.js"></script>
+    <title>Quiz</title>
 </head>
-<body>
+<body class="oppsett">
+    <header class="header">
+        <!-- dette genererer et tilfeldig bilde i 400x200px, og bør byttes ut -->
+        <img src="https://unsplash.it/400/200" alt="headerbilde">
+        <h1>Quiz</h1>
+    </header>
     <div class="senter">
         <h1>Spørsmål 1</h1>
         <p>[Skriv spørsmålet her]</p>
@@ -16,5 +21,8 @@
         <button id="svar2">[svaraltenativ 2]</button>
         <button id="svar3">[svaraltenativ 3]</button>
     </div>
+    <footer>
+        <p>Quiz laget av [gruppenavn]</p>
+    </footer>
 </body>
 </html>

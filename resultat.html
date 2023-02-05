@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="module" src="script.js"></script>
     <title>Resultat</title>
 </head>
-<body>
+<body class="oppsett">
+    <header class="header">
+        <!-- dette genererer et tilfeldig bilde i 400x200px, og bør byttes ut -->
+        <img src="https://unsplash.it/400/200" alt="headerbilde">
+        <h1>Resultat</h1>
+    </header>
     <div class="senter">
-        <h1>Result</h1>
-        <p>Your score is: <span id="score"></span></p>
-        <button id="retakeBtn">Retake Quiz</button>
+        <h1>Ditt resultat: <span id="score"></span></h1>
+        <button id="retakeBtn">Ta quizen omigjen</button>
     </div>
+    <footer>
+        <p>Quiz laget av [gruppenavn]</p>
+    </footer>
 </body>
 </html>

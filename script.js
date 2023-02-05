@@ -1,48 +1,54 @@
-const quizForm = document.getElementById("quiz-form");
-const sections = document.querySelectorAll("section");
-const currentPageDisplay = document.getElementById("current-page");
+// script.js
+var score = 0;
 
-let currentPage = 1;
-let score = 0;
-
-// Hide all sections except the first
-for (let i = 1; i < sections.length; i++) {
-  sections[i].style.display = "none";
-}
-
-quizForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  // Get the selected answer for the current page
-  const currentQuestion = `q${currentPage}`;
-  const selectedAnswer = document.querySelector(`input[name="${currentQuestion}"]:checked`).value;
-
-  // Check if the answer is correct
-  switch (currentQuestion) {
-    case "q1":
-      if (selectedAnswer === "Paris") {
-        score++;
-      }
-      break;
-    case "q2":
-      if (selectedAnswer === "Rome") {
-        score++;
-      }
-      break;
-    // Add more cases for the other questions
-    case "q5":
-      if (selectedAnswer === "Madrid") {
-        score++;
-      }
-      break;
-  }
-
-  // Show the next page or display the final score
-  if (currentPage < sections.length) {
-    sections[currentPage - 1].style.display = "none";
-    sections[currentPage].style.display = "block";
-    currentPageDisplay.textContent = `Page ${++currentPage}`;
-  } else {
-    alert(`Your final score is: ${score}/${sections.length}`);
-  }
+// Starter quizen og bestemmer hvor brukeren blir sendt.
+document.getElementById("startBtn").addEventListener("click", function() {
+  window.location.href = "quiz_1.html";
 });
+
+// Lar brukeren gjenta quizen, og tilbakestiller poengsummen.
+document.getElementById("retakeBtn").addEventListener("click", function() {
+  score = 0;
+  window.location.href = "index.html";
+});
+
+// Spørsmål 1
+// Koden for riktig svaralternativ på spørsmål 1, score++ øker poengsummen før brukeren blir sent til neste spørsmål.
+document.getElementById("svar1").addEventListener("click", function() {
+    score++;
+    window.location.href = "quiz_2.html";
+});
+// Koden for feil svar, hvor brukeren blir sent videre uten at poengsummen øker
+document.getElementById("svar2").addEventListener("click", function() {
+    window.location.href = "quiz_2.html";
+});
+document.getElementById("svar3").addEventListener("click", function() {
+    window.location.href = "quiz_2.html";
+});
+
+// Spørsmål 2
+document.getElementById("svar1").addEventListener("click", function() {
+    score++;
+    window.location.href = "quiz_3.html";
+});
+document.getElementById("svar2").addEventListener("click", function() {
+    window.location.href = "quiz_3.html";
+});
+document.getElementById("svar3").addEventListener("click", function() {
+    window.location.href = "quiz_3.html";
+});
+
+// Spørsmål 3
+document.getElementById("svar1").addEventListener("click", function() {
+    score++;
+    window.location.href = "resultat.html";
+});
+document.getElementById("svar2").addEventListener("click", function() {
+    window.location.href = "resultat.html";
+});
+document.getElementById("svar3").addEventListener("click", function() {
+    window.location.href = "resultat.html";
+});
+
+// Update score on result page
+document.getElementById("score").innerHTML = score;
