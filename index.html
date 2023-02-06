@@ -12,15 +12,15 @@
     <header>
         <h1>Quiz</h1>
     </header>
-    <main class="senter">
-        <h1>Spørsmål</h1> <!-- Det første spørsmålet må være identisk med det første spørsmålet i script-filen -->
+    <main>
+        <div>
+            <h2>Hva kan du om [tema]?</h2> <!-- Det første spørsmålet må være identisk med det første spørsmålet i script-filen -->
+        </div>
         <div id="questionContainer">
-            <h2>[Skriv spørsmål 1 her]?</h2>
+            <p>[Sett inn eventuell beskrivelse her]</p>
             <img src="https://unsplash.it/400/200" alt="bilde1"> <!-- dette genererer et tilfeldig bilde i 400x200px, og bør byttes ut -->
             <div>
-              <button type="button" onclick="handleOptionClick(false)">Alternativ 1</button>
-              <button type="button" onclick="handleOptionClick(true)">Alternativ 2</button>
-              <button type="button" onclick="handleOptionClick(false)">Alternativ 3</button>
+              <button type="button" onclick="handleOptionClick(false)">Start quizen!</button>
             </div>
         </div>
         <div id="resultContainer" class="resultater"></div>
