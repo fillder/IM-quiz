@@ -3,7 +3,7 @@ const totalQuestions = 6; //endre dette antallet dersom dere ønsker flere spør
 const questions = [
   { //Dette er kodet som et spørsmål, men er egntlig kun satt opp for at dere skal slippe å lage en unik start
     options: [
-      { text: "Start Quizen!", correct: false}, 
+      { text: "Start Quizen!", correct: false},
     ]
   },
   {
@@ -59,27 +59,30 @@ const questions = [
   // Kopier malen over for å legge til flere spørsmål. Husk å endre antall spørsmål øverst.
 ];
 
+//________________Dere trenger ikke redigere noe under denne linjen________________//
 
-//___________________________Dere trenger ikke redigere noe under denne linjen_______________________________//
+
+// Lager en variabel for å holde styr på hvilket spørsmål som er aktivt
 let currentQuestion = 0;
 
+// Håndterer klikk på alternativer, øker poengsummen hvis riktig alternativ er valgt
 const handleOptionClick = (isCorrect) => {
   if (isCorrect) {
     score++;
   }
-
+  // Sjekker om dette er siste spørsmål
   if (currentQuestion === totalQuestions - 1) {
-    // Hvis sluttresultat
     const resultContainer = document.querySelector("#resultContainer");
     resultContainer.innerHTML = `Your final score is: ${score}/${questions.length-1}`;
     resultContainer.style.display = "block"; //Viser resultatteksten etter at siste spørsmål er besvart
     questionContainer.style.display = "none"; //skjuler spørsmålsboksen etter at siste spørsmål er besvart
+
   } else {
     currentQuestion++;
     renderQuestion();
   }
 };
-
+// Renderer det aktive spørsmålet til siden
 const renderQuestion = () => {
   const questionContainer = document.querySelector("#questionContainer");
   const currentQ = questions[currentQuestion];
@@ -99,5 +102,5 @@ const renderQuestion = () => {
     </div>
   `;
 };
-
+// Render første spørsmål når siden lastes
 renderQuestion();
